@@ -1,0 +1,12 @@
+experiment_id: baseline_r0.75_mvbench_action_count_2026-10-18_kaggle_v11
+script: src/run_evaluation.py
+model_path: Qwen/Qwen3-VL-2B-Instruct
+task: mvbench_action_count
+fps: 10
+dtype: float16
+config: src/angelslim/configs/qwen3_vl/baseline_r0.75.yaml
+ratio: 0.75
+max_tokens: 16
+max_num_frames: 16
+num_gpus: 2
+limit: 0.05

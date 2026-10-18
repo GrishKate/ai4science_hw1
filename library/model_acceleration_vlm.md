@@ -1,0 +1,9 @@
+# Библиотека: ускорение VLM / VideoLLM
+
+| Title | Link | openalex_id | Short description |
+|-------|------|-------------|-------------------|
+| VL-Cache: Sparsity and Modality-Aware KV Cache Compression for VLM Inference Acceleration | [arXiv](https://arxiv.org/pdf/2410.23317) | W4404346332 | KV cache compression for VLMs with layer-adaptive sparsity and modality-aware token scoring. Retaining 10% KV cache achieves full-cache accuracy; up to 2.33x end-to-end speedup, 7.08x decoding speedup, 90% memory reduction. |
+| VisCache: Visual KV Cache Pruning for Efficient VLLM Inference | [arXiv](https://arxiv.org/pdf/2608.24063) | W7204250733 | Plug-and-play coarse-to-fine visual KV cache pruning without training. PruneKV uses parabolic layer-wise budget allocation and asymmetric key pruning/value fusion. 2.35x speedup with 19-28% KV retention. |
+| Feather the Throttle: Revisiting Visual Token Pruning for VLM Acceleration | [arXiv](https://arxiv.org/pdf/2412.13180) | W4405562834 | Identifies flaw in early visual token pruning (top-of-image bias). Proposes FEATHER with multistage pruning + early uniform sampling for better coverage. 5x improvement on localization benchmarks. |
+| Video Compression Commander (VidCom²): Plug-and-Play Inference Acceleration for VideoLLMs | [ACL](https://aclanthology.org/2025.emnlp-main.98.pdf) | W4416037134 | Frame-level uniqueness quantification for adaptive compression across video frames. 25% visual tokens → 99.6% original performance on LLaVA-OV, 70.8% LLM latency reduction. Compatible with other compression methods. |
+| VETO: Video Efficient Token Optimization for Vision Language Models | [arXiv](https://arxiv.org/pdf/2610.01785) | W7215811224 | Dual-axis compression: intra-frame (spatial) + inter-frame (temporal) via optimal-transport matching. Hierarchical ordering bypasses single-axis efficiency wall. 45% faster inference, 55.7% accuracy at 10% token budget. |

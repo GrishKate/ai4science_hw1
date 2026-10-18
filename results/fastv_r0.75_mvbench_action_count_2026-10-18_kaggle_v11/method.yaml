@@ -1,0 +1,3 @@
+method_id: fastv
+description: >-
+  FastV-style visual-token pruning based on attention from the last text token.

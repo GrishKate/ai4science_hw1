@@ -1,0 +1,112 @@
+ontology:
+  name: videoqa-experiment-ontology
+  version: 1.0.0
+  description: >-
+    Онтология воспроизводимых экспериментов по ускорению моделей в задаче
+    Video Question Answering.
+
+classes:
+  Experiment:
+    description: Один запуск метода с фиксированными кодом, конфигурацией и оборудованием.
+    documentation: ontology/experiment.md
+    properties:
+      experiment_id:
+        type: string
+        required: true
+        unique: true
+        description: Уникальный идентификатор эксперимента.
+      hardware:
+        type: string
+        required: true
+        description: Оборудование, на котором выполнен запуск.
+        example: NVIDIA Tesla T4
+      config_file:
+        type: path
+        required: true
+        description: Путь к YAML-файлу со всеми гиперпараметрами запуска в src/.
+      commit_hash:
+        type: string
+        required: true
+        pattern: "^[0-9a-f]{40}$"
+        description: Полный Git commit hash состояния кода во время запуска.
+      results_directory:
+        type: path
+        required: true
+        pattern: "^results/[^/]+/$"
+        description: Отдельная папка эксперимента внутри results/.
+      method:
+        type: relation
+        target: Method
+        required: true
+        cardinality: one
+        description: Метод, проверяемый в эксперименте.
+      measurement:
+        type: relation
+        target: Measurement
+        required: true
+        cardinality: one
+        description: Результаты измерений эксперимента.
+
+  Method:
+    description: Метод ускорения, проверяемый в одном или нескольких экспериментах.
+    documentation: ontology/method.md
+    properties:
+      method_id:
+        type: string
+        required: true
+        unique: true
+        description: Уникальный идентификатор метода.
+      description:
+        type: string
+        required: true
+        description: Содержательное описание метода ускорения.
+
+  Measurement:
+    description: Набор метрик, полученный в результате одного эксперимента.
+    documentation: ontology/measurement.md
+    properties:
+      measurement_id:
+        type: string
+        required: true
+        unique: true
+        description: Уникальный идентификатор набора измерений.
+      metrics_file:
+        type: path
+        required: true
+        pattern: "^results/[^/]+/metrics\\.csv$"
+        description: Путь к CSV-файлу со всеми метриками эксперимента.
+  
+  Runner:
+    description: Аргументы командной строки для эксперимента.
+    documentation: ontology/runner.md
+    properties:
+      experiment_id:
+        type: string
+        required: true
+        unique: true
+        description: Идентификатор эксперимента.
+      script:
+        type: string
+        required: true
+        description: Скрипт для запуска.
+
+relations:
+  - subject: Experiment
+    predicate: method
+    object: Method
+    cardinality: many-to-one
+  - subject: Experiment
+    predicate: measurement
+    object: Measurement
+    cardinality: one-to-one
+  - subject: Experiment
+    predicate: runner
+    object: Runner
+    cardinality: one-to-one
+
+storage:
+  experiment_results_pattern: results/<experiment_id>/
+  metrics_file_pattern: results/<experiment_id>/metrics.csv
+  results_policy: >-
+    Каждый эксперимент использует отдельную папку в results/. Существующие
+    папки и файлы результатов нельзя перезаписывать.

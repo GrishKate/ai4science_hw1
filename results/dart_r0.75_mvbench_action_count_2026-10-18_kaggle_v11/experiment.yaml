@@ -1,0 +1,12 @@
+experiment_id: dart_r0.75_mvbench_action_count_2026-10-18_kaggle_v11
+status: queued
+hardware: "Kaggle NvidiaTeslaT4, num_gpus=2"
+config_file: src/angelslim/configs/qwen3_vl/dart_r0.75.yaml
+commit_hash: c5f8d71cdfb367c69dd2e45bc7fd9122d7090d38
+results_directory: results/dart_r0.75_mvbench_action_count_2026-10-18_kaggle_v11/
+method: dart
+runner: dart_r0.75_mvbench_action_count_2026-10-18_kaggle_v11_runner
+measurement: pending
+kaggle_kernel: ekaterinagrishina/testing
+kaggle_version: 11
+metrics_file: pending

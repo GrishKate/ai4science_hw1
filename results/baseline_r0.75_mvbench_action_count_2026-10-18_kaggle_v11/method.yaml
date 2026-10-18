@@ -1,0 +1,4 @@
+method_id: baseline
+description: >-
+  Qwen3-VL reference evaluation without visual-token pruning; ratio 0.75 is
+  retained in the shared compressor configuration for comparison.

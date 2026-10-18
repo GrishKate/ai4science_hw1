@@ -1,0 +1,2 @@
+,mvbench_action_count,num_requests,total_generation_time_ms,total_generated_tokens,input_tokens,output_tokens,image_processing_time_ms,total_prefill_time_ms,total_decode_time_ms,num_prefill_calls,num_decode_calls,num_prefill_tokens,img_processing_prefill_time_ms,img_processing_decode_time_ms,total_frames,num_kept_before,num_kept_after,avg_per_token_time_ms,avg_prefill_time_ms,avg_decode_time_ms
+fastv_r0.75,30.0,10,22426.49267578125,50,47212,47262,78390.5205078125,0.0,0.0,0,0,0,0.0,0.0,400,0,12652,448.529853515625,0.0,0.0

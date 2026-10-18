@@ -1,0 +1,4 @@
+method_id: dart
+description: >-
+  DART visual-token pruning using image and text pivots to retain tokens most
+  relevant to multimodal generation.

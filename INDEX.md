@@ -1,0 +1,14 @@
+- `aisuite.yaml` навигация по инструментам.
+- `skills/` навыки.
+- `src/` код. 
+- `src/tests/` локальные тесты. 
+- `src/angelslim/compressor/token_compressor/qwen3_vl/` aрхитектура модели.
+- `src/angelslim/configs/qwen3_vl/` конфиги для запуска методов.
+- `mock_data/` данные для локальных тестов. Нельзя менять.
+- `qwen3_vl_debug/` конфиги модели. Нельзя менять.
+- `notebooks/` ноутбуки для запуска в kaggle и сбора метрик.
+- `results/` результаты сбора метрик, не перезаписывать.
+- `ontology.yaml` схема онтологии экспериментов.
+- `ontology/` документация классов `Experiment`, `Method` и `Measurement`.
+- `memory/` cводки и заметки для следующих сессий.
+- `library/` - обзоры литературы из OpenAlex.
